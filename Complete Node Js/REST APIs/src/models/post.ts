@@ -16,11 +16,12 @@ const postSchema = new Schema(
       required: true,
     },
     creator: {
-      type: Object,
+      type: Schema.Types.ObjectId,
       required: true,
+      ref: "User",
     },
   },
   { timestamps: true }
 );
 
-module.exports = model<PostInterface>("Post", postSchema);
+export default model<PostInterface>("Post", postSchema);
